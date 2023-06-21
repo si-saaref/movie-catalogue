@@ -7,6 +7,9 @@ const Detail = {
 
 	async afterRender() {
 		// Fungsi ini akan dipanggil setelah render()
+		const url = UrlParser.parseActiveUrlWithoutCombiner();
+		const movie = await TheMovieDbSource.detailMovie(url.id);
+		console.log(movie);
 	},
 };
 
