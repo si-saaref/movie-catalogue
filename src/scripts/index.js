@@ -11,3 +11,11 @@ const app = new App({
 });
 
 app._initialAppShell();
+
+window.addEventListener('hashchange', () => {
+	app.renderPage();
+});
+
+window.addEventListener('load', () => {
+	app.renderPage();
+});
