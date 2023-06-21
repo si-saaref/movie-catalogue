@@ -2,4 +2,12 @@ import 'regenerator-runtime';
 import '../styles/style.css';
 import '../styles/responsive.css';
 
-console.log('Hello Coders!');
+import App from './views/app';
+
+const app = new App({
+	button: document.querySelector('#hamburgerButton'),
+	drawer: document.querySelector('#navigationDrawer'),
+	content: document.querySelector('#mainContent'),
+});
+
+app._initialAppShell();
