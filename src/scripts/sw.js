@@ -23,5 +23,6 @@ self.addEventListener('fetch', (event) => {
 
 /* 
 ! Siklus hidup terbagi menjadi 3 = Installation, Activation, Idle (fetch, push, sync)
+! SW berajalan pada thread yang berbeda dengan browser sehingga tidak bisa berurusan langsung dengan browser
 
 */
