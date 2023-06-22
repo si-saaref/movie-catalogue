@@ -1,5 +1,7 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const path = require('path');
 
 module.exports = merge(common, {
 	mode: 'production',
@@ -21,7 +23,12 @@ module.exports = merge(common, {
 		],
 	},
 	plugins: [
-		new WorkboxWebpackPlugin.GenerateSW({
+		// new WorkboxWebpackPlugin.GenerateSW({
+		// 	swDest: './sw.bundle.js',
+		// }),
+		// ! Working with inject manifest
+		new WorkboxWebpackPlugin.InjectManifest({
+			swSrc: path.resolve(__dirname, 'src/scripts/sw-inject.js'),
 			swDest: './sw.bundle.js',
 		}),
 	],

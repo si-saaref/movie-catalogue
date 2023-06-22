@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
 	entry: {
@@ -44,6 +44,12 @@ module.exports = {
 		}),
 		// ! Due to error that generateSW called multiple times on dev -> so this will be move to prod confg
 		// new WorkboxWebpackPlugin.GenerateSW({
+		// 	swDest: './sw.bundle.js',
+		// }),
+
+		// // ! Working with inject manifest
+		// new WorkboxWebpackPlugin.InjectManifest({
+		// 	swSrc: path.resolve(__dirname, 'src/scripts/sw-inject.js'),
 		// 	swDest: './sw.bundle.js',
 		// }),
 	],

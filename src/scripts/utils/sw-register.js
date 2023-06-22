@@ -7,21 +7,21 @@ const swRegister = async () => {
 	}
 
 	// Todo => without workbox
-	// try {
-	// 	await navigator.serviceWorker.register('./sw.bundle.js');
-	// 	console.log('Service worker registered');
-	// } catch (error) {
-	// 	console.log('Failed to register service worker', error);
-	// }
-
-	// Todo => with workbox
-	const wb = new WorkboxWindow.Workbox('./sw.bundle.js');
 	try {
-		await wb.register();
-		console.log('Service worker registered');
+		await navigator.serviceWorker.register('./sw.bundle.js');
+		console.log('Service Worker Native  is regeistered');
 	} catch (error) {
 		console.log('Failed to register service worker', error);
 	}
+
+	// Todo => with workbox
+	// const wb = new WorkboxWindow.Workbox('./sw.bundle.js');
+	// try {
+	// 	await wb.register();
+	// 	console.log('Service Worker With Workbox Worked');
+	// } catch (error) {
+	// 	console.log('Failed to register service worker', error);
+	// }
 };
 
 export default swRegister;
