@@ -20,4 +20,9 @@ module.exports = merge(common, {
 			},
 		],
 	},
+	plugins: [
+		new WorkboxWebpackPlugin.GenerateSW({
+			swDest: './sw.bundle.js',
+		}),
+	],
 });

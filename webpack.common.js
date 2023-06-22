@@ -42,8 +42,9 @@ module.exports = {
 				},
 			],
 		}),
-		new WorkboxWebpackPlugin.GenerateSW({
-			swDest: './sw.bundle.js',
-		}),
+		// ! Due to error that generateSW called multiple times on dev -> so this will be move to prod confg
+		// new WorkboxWebpackPlugin.GenerateSW({
+		// 	swDest: './sw.bundle.js',
+		// }),
 	],
 };
